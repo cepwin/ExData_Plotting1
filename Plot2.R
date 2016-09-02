@@ -4,6 +4,7 @@ Plot2<-function() {
   tab1$DateTime<-strptime(tab1$DateTime,format="%d/%m/%Y %H:%M:%S")
   tab2<-subset(tab1,DateTime>="2007-02-01" & DateTime<"2007-02-03")
   par(mfrow=c(1,1))
-  plot(y=tab2$Global_active_power,x=tab2$DateTime,ylab="Global Active Power (kilowatts)",type = "l")
-  tab2
+  plot(y=tab2$Global_active_power,x=tab2$DateTime,ylab="Global Active Power (kilowatts)",xlab="",type = "l")
+  dev.copy(png, file = "Plot2.png")
+  dev.off()
 }

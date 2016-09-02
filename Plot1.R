@@ -5,5 +5,6 @@ tab1$DateTime<-strptime(tab1$DateTime,format="%d/%m/%Y %H:%M:%S")
 tab2<-subset(tab1,DateTime>="2007-02-01" & DateTime<"2007-02-03")
 par(mfrow=c(1,1))
 hist(tab2$Global_active_power,col="red",main="Global Active Power",xlab="Global Active Power (kilowatts)")
-tab2
+dev.copy(png, file = "Plot2.png")
+dev.off()
 }
